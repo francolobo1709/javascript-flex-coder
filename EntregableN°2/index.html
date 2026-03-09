@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Verdulería - Entregable 2</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Simulador: Verdulería</h1>
+        
+        <form id="formularioProducto">
+            <div class="input-group">
+                <label for="nombreProducto">Nombre del Producto:</label>
+                <input type="text" id="nombreProducto" placeholder="Ej: Manzana orgánico" required>
+            </div>
+            <div class="input-group">
+                <label for="precioProducto">Precio por Kilo ($):</label>
+                <input type="number" id="precioProducto" placeholder="Ej: 1500" required min="1">
+            </div>
+            <button type="submit" class="btn">Agregar al Carrito</button>
+        </form>
+
+        <h2>Productos del Carrito:</h2>
+        <ul id="listaProductos"></ul>
+        <h3 id="totalPrecio">Total a abonar:$0</h3>
+
+        <button id="btnLimpiar" class="btn btn-rojo">Limpiar Carrito</button>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
