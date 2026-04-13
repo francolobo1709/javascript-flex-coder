@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdulería Franco Lobo - Sistema de Gestión</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Verdulería Franco Lobo</h1>
+        <p class="subtitulo">Carrito de Ventas y Consultas de Compradores</p>
+    </header>
+
+    <main>
+
+        <!-- SECCIÓN: CARRITO (base del EntregableN°2, con las mejoras solicitadas por el profesor)  -->
+        <section class="seccion" id="seccion-carrito">
+            <h2>Cargar Producto al Carrito</h2>
+
+            <form id="formularioProducto">
+                <div class="input-group">
+                    <label for="nombreProducto">Nombre del Producto</label>
+                    <input type="text" id="nombreProducto" placeholder="Ej: Manzana orgánica" autocomplete="off">
+                    <span class="error-msg" id="errorNombre"></span>
+                </div>
+                <div class="input-group">
+                    <label for="precioProducto">Precio por Kilo ($)</label>
+                    <input type="number" id="precioProducto" placeholder="Ej: 1500" min="1">
+                    <span class="error-msg" id="errorPrecio"></span>
+                </div>
+                <div class="input-group">
+                    <label for="cantidadProducto">Cantidad (kg)</label>
+                    <input type="number" id="cantidadProducto" placeholder="Ej: 2" min="0.1" step="0.1">
+                    <span class="error-msg" id="errorCantidad"></span>
+                </div>
+                <button type="submit" class="btn btn-verde">Agregar al Carrito</button>
+            </form>
+
+            <div id="toast" class="toast oculto"></div>
+
+            <h3>Productos en el Carrito</h3>
+            <ul id="listaProductos"></ul>
+
+            <div class="totales">
+                <p id="totalPrecio">Total a abonar: $0</p>
+            </div>
+
+            <button id="btnLimpiar" class="btn btn-rojo">Limpiar Carrito</button>
+        </section>
+
+        <!-- SECCIÓN: TOP COMPRADORES + CONTROL (JSONPlaceholder/users) -->
+        <section class="seccion" id="seccion-compradores">
+            <h2>Top Mejores Compradores</h2>
+            <p class="seccion-desc">Consultá cuántos clientes querés ver y cargá toda la información</p>
+
+            <div class="consultar-bar">
+                <div class="input-group consultar-input">
+                    <label for="inputLimite">¿Cuántos compradores querés ver? (1 - 10)</label>
+                    <input type="number" id="inputLimite" placeholder="Ej: 5">
+                    <span class="error-msg" id="errorLimite"></span>
+                </div>
+                <button id="btnConsultar" class="btn btn-verde">Consultar</button>
+            </div>
+
+            <div id="loadingCompradores" class="loading oculto">Cargando compradores...</div>
+            <div id="errorCompradores" class="error-api oculto"></div>
+            <div id="listaCompradores" class="grid-cards"></div>
+        </section>
+
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

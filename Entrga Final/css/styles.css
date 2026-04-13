@@ -1,0 +1,391 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f7f0;
+    color: #2d3436;
+    min-height: 100vh;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+header {
+    background: linear-gradient(135deg, #2d8653, #1a5e38);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+header .subtitulo {
+    margin-top: 0.4rem;
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* =========================================
+   SECCIONES
+   ========================================= */
+.seccion {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.seccion h2 {
+    color: #1a5e38;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8f5e9;
+}
+
+.seccion h3 {
+    color: #2d8653;
+    font-size: 1rem;
+    margin: 1.4rem 0 0.6rem;
+}
+
+.seccion-desc {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.2rem;
+}
+
+/* =========================================
+   FORMULARIO
+   ========================================= */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+.input-group input {
+    padding: 0.65rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #2d8653;
+}
+
+.input-group input.input-error {
+    border-color: #e74c3c;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.78rem;
+    margin-top: 0.25rem;
+    min-height: 1rem;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn {
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-verde {
+    background-color: #2d8653;
+    color: white;
+}
+
+.btn-verde:hover {
+    opacity: 0.88;
+}
+
+.btn-rojo {
+    background-color: #e74c3c;
+    color: white;
+    margin-top: 1rem;
+}
+
+.btn-rojo:hover {
+    opacity: 0.88;
+}
+
+/* =========================================
+   CARRITO - ITEMS
+   ========================================= */
+#listaProductos {
+    list-style: none;
+    margin: 0.6rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    padding: 1.2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px dashed #ddd;
+    font-size: 0.88rem;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    border: 1px solid #e8f5e9;
+    border-radius: 8px;
+    background: #f9fffe;
+    animation: slideIn 0.25s ease;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.item-info strong {
+    color: #1a5e38;
+}
+
+.item-info span {
+    font-size: 0.83rem;
+    color: #666;
+}
+
+.btn-eliminar {
+    background: none;
+    border: 1.5px solid #e74c3c;
+    color: #e74c3c;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-eliminar:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+/* =========================================
+   TOTALES
+   ========================================= */
+.totales {
+    padding: 0.8rem 1rem;
+    background: #e8f5e9;
+    border-radius: 8px;
+}
+
+#totalPrecio {
+    font-weight: 700;
+    color: #1a5e38;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   TOAST (reemplaza al alert)
+   ========================================= */
+.toast {
+    padding: 0.75rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: 0.8rem;
+    animation: fadeSlide 0.3s ease;
+}
+
+.toast-exito {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.toast-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* =========================================
+   ESTADOS API
+   ========================================= */
+.loading {
+    text-align: center;
+    color: #aaa;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+.error-api {
+    color: #c0392b;
+    background: #fff5f5;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ffd4d4;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   GRID DE CARDS (compradores)
+   ========================================= */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Compradores */
+.card-comprador {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+}
+
+.ranking {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2d8653;
+    margin-bottom: 0.4rem;
+}
+
+.card-comprador h4 {
+    color: #1a5e38;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.detalle {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* =========================================
+   CONSULTAR BAR
+   ========================================= */
+.consultar-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.consultar-input {
+    flex: 1;
+    max-width: 320px;
+    margin-bottom: 0;
+}
+
+.consultar-bar .btn {
+    white-space: nowrap;
+    margin-bottom: 0;
+    /* alineado con el input, no con el label */
+    align-self: flex-end;
+}
+
+@media (max-width: 500px) {
+    .consultar-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .consultar-input {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .grid-cards {
+        grid-template-columns: 1fr;
+    }
+}
